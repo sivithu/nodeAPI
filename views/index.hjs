@@ -10,6 +10,7 @@
     <form action="/ville" method="post">
       <label>Entrer le nom de la ville: </label>
       <input type="text" name="name" id="nom_ville" required>
+      <textarea name="description" id="description_ville">Write here</textarea>
       <input type="submit" value="Envoyer la ville">
     </form>
   </body>

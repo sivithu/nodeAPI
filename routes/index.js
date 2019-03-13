@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/ville', function(req, res, next) {
-  res.render('ville', { nom_ville : req.body.name});
+  res.render('ville', { nom_ville : req.body.name, description : req.body.description});
 })
 
 module.exports = router;

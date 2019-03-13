@@ -6,6 +6,8 @@
   </head>
   <body>
     <h1>{{ nom_ville }}</h1>
-    <p>Voici votre {{ nom_ville }}</p>
+    <p>Voici votre ville : {{ nom_ville }}</p></br>
+    <p>Description :</p></br>
+    <textarea>{{ description }}</textarea>
   </body>
 </html>
