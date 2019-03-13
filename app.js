@@ -40,8 +40,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, () => {
+/*app.listen(port, () => {
   console.log("Server is up and listnening on port " + port + "...");
-})
+})*/
 
 module.exports = app;
