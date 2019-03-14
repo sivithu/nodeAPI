@@ -30,6 +30,9 @@ Ou sinon le déployer sur Heroku.
 - 1ère test : La page d'index du site comprend bien un formulaire HTML
 - 2ème test : la page “ville” contient bien le nom de la ville qui lui a été passé en paramètre POST
 - 3ème test : la ville est inexistante
+- 4ème test : Affiche les coordonnées pour la ville existante
+- 5ème test : Affiche une erreur pour une ville inexistante
+- 6ème test : Affiche un message pour une erreur 404
 
 ## Versions
 * Vérifier les versions disponibles. [cliquez ici](https://github.com/sivithu/nodeAPI/tags).
