@@ -1,6 +1,7 @@
 var express = require('express');
 var request = require('request');
 var nock = require('nock');
+var axios = require('axios');
 var router = express.Router();
 
 /* GET home page. */
@@ -8,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Node App' });
 });
 
-router.post('/ville', function(req, res, next) {
+router.post('/ville', async (req, res, next) => {
   var te;
   var msg;
   var long;
@@ -23,6 +24,12 @@ router.post('/ville', function(req, res, next) {
       msg = 'none';
       long = 'NaN';
       lat = 'NaN';
+    } else if(response.statusCode == 404){
+      msg = 'block'
+      long = "NaN";
+      lat = "NaN";
+      ville = "GeoCode is down";
+      desc = "GeoCode is down";
     } else {
       msg = 'block'
       long = te.longt;
