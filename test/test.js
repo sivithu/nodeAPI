@@ -1,6 +1,7 @@
 import test from 'ava';
 import request from 'request';
 import axios from 'axios';
+import nock from 'nock';
 
 //test fonctionnel
 test("La page d'index du site comprend bien un formulaire HTML", async t => {
@@ -16,7 +17,8 @@ test("La page d'index du site comprend bien un formulaire HTML", async t => {
 //test fonctionnel
 test("la page “ville” contient bien le nom de la ville qui lui a été passé en paramètre POST", async t => {
     try {
-      const response = await axios.post("https://mysterious-waters-98517.herokuapp.com/ville", { name : 'paris'});
+      var ville_name = 'paris'
+      const response = await axios.post("http://localhost:3000/ville", { name : ville_name});
       var test = response.data.toString().includes('Voici votre ville : paris');
       t.is(test, true);
     } catch (e) {
@@ -24,7 +26,7 @@ test("la page “ville” contient bien le nom de la ville qui lui a été pass�
     }
 })
 
-//test d'intégration
+//test fonctionnel
 test("la ville est inexistante", async t => {
     try {
       const response = await axios.post("https://mysterious-waters-98517.herokuapp.com/ville", { name : 'fzrgth'});
